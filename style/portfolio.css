@@ -1,0 +1,50 @@
+#portfolio {
+	margin-bottom: 30px;
+	padding: 20px 0; /* Ajoute de l'espace verticalement pour ne pas coller aux bords */
+}
+
+.portfolio-item {
+	flex: 0 0 auto; /* Évite que les éléments se rétrécissent ou s'étirent */
+	width: 420px; /* Fixe une largeur pour les items du portfolio */
+	margin-top: 100px;
+}
+
+.portfolio-item img {
+	width: 100%; /* Permet à l'image de prendre toute la largeur de son conteneur */
+	height: auto; /* Maintient les proportions originales de l'image */
+	max-width: 420px; /* Définit la largeur maximale de l'image */
+	max-height: 297px; /* Définit la hauteur maximale pour maintenir la proportion */
+	border-radius: 10px;
+	cursor: pointer;
+	transition: transform 0.3s ease-in-out;
+}
+
+.portfolio-item p {
+	margin-top: 10px; /* Ajoute une marge en haut pour séparer du visuel */
+	text-align: center; /* Centre le texte horizontalement */
+	font-size: 18px; /* Taille de la police pour le texte du projet */
+	color: #fff; /* Couleur du texte pour le contraste */
+	user-select: none; /* Empêche la sélection du texte */
+}
+
+.portfolio-container {
+	position: relative;
+	display: flex; /* Utilise flexbox pour aligner les éléments côte à côte */
+	flex-wrap: nowrap; /* Empêche les éléments de passer à la ligne suivante */
+	overflow-x: auto; /* Permet de faire défiler horizontalement si nécessaire */
+	justify-content: flex-start; /* Commence les éléments à gauche */
+	align-items: center; /* Alignement vertical */
+	gap: 20px; /* Espace entre chaque élément du portfolio */
+	overflow: hidden;
+	justify-content: space-between;
+}
+
+.fade-in {
+	opacity: 1; /* Assure que le contenu est visible */
+	transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+	transform: none; /* Assure qu'aucun déplacement n'est appliqué au départ */
+}
+
+.portfolio-item img:hover {
+	transform: scale(1.05); /* Zooms in the image */
+}

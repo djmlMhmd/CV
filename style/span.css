@@ -1,0 +1,124 @@
+/* Styles pour les technologies et compétences */
+.tech-stack,
+.skills-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+.tech-stack span,
+.skills-list span {
+	background-color: #333;
+	color: #fff;
+	padding: 5px 10px;
+	border-radius: 5px;
+	text-transform: uppercase;
+	font-size: 14px;
+}
+
+/* Styles pour les logos */
+.logos img,
+.logos-slide img,
+.logos-slide-2 img {
+	height: 30px; /* Hauteur des logos */
+	width: auto;
+	margin-right: 10px; /* Espace entre les logos */
+}
+
+#professional_experience {
+	color: #fff; /* Texte blanc */
+	padding: 20px;
+	font-family: 'Arial', sans-serif;
+	margin-bottom: 10px;
+}
+
+/*.experience-item {
+	margin-bottom: 20px;
+}*/
+
+.experience-item h3 {
+	font-size: 18px;
+	color: #bbb; /* Gris clair pour les titres */
+}
+
+.year {
+	font-size: 35px;
+	color: #333;
+}
+
+.poste {
+	font-size: 30px;
+}
+
+.entreprise {
+	font-size: 35px;
+}
+
+.tech-stack {
+	display: flex; /* Utilisation de Flexbox pour aligner les technologies */
+	flex-wrap: wrap;
+	gap: 10px; /* Espace entre les tags */
+}
+
+.tech-stack .nodejs {
+	background-color: #8cc84b;
+} /* Vert pour Node.js */
+.tech-stack .express {
+	background-color: rgb(134, 83, 211);
+} /* Jaune pour Express */
+.tech-stack .angular {
+	background-color: #dd1b16;
+} /* Rouge pour Angular */
+.tech-stack .postgresql {
+	background-color: #336791;
+} /* Bleu pour PostgreSQL */
+.tech-stack .socketio {
+	background-color: #010101;
+} /* Noir pour Socket.io */
+.tech-stack .restapis {
+	background-color: #439ab0;
+} /* Bleu clair pour REST APIs */
+.tech-stack .flutter {
+	background-color: #02569b; /* Bleu pour Flutter */
+}
+.tech-stack .react {
+	background-color: #61dafb; /* Bleu clair pour React */
+}
+.tech-stack .mysql {
+	background-color: #4479a1; /* Bleu MySQL */
+}
+.tech-stack .html {
+	background-color: #e34f26; /* Orange pour HTML */
+}
+.tech-stack .css {
+	background-color: #264de4; /* Bleu pour CSS */
+}
+.tech-stack .boostrap {
+	background-color: #563d7c; /* Violet pour Bootstrap */
+}
+.tech-stack .mongodb {
+	background-color: #4db33d; /* Vert Mongo DB */
+}
+.tech-stack .c {
+	background-color: #a8b9cc; /* Bleu clair pour C */
+}
+.tech-stack .python {
+	background-color: #2fbc7a; /* Jaune pour Python */
+}
+.tech-stack .flask {
+	background-color: #000000; /* Noir pour Flask */
+}
+.tech-stack .bash {
+	background-color: #4eaa25; /* Vert pour Bash */
+}
+.tech-stack .javascript {
+	background-color: #d4be30; /* Jaune pour JavaScript */
+}
+
+.tech-stack span {
+	background-color: #333; /* Fond pour les compétences */
+	padding: 5px 10px;
+	border-radius: 10px; /* Bordures arrondies */
+	font-size: 10px;
+	margin-top: 10px;
+}

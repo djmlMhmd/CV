@@ -1,0 +1,203 @@
+.btn-shine {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 100px; /* Ajustée pour mieux s'adapter au contenu */
+	height: 30px; /* Hauteur fixe pour tous les boutons */
+	margin-left: 10px;
+	border: none;
+	outline: none;
+	border-radius: 7px;
+	cursor: pointer;
+	background-color: #b1b1b1; /* Fond gris sombre des boutons */
+	color: #3d3d3d; /* Couleur de texte initiale */
+	font-weight: 400;
+	font-size: 300px; /* Taille du texte ajustée */
+	text-decoration: none;
+	transition: background-color 0.3s, transform 0.3s; /* Animation douce pour le survol */
+	box-shadow: 2px 2px 10px rgba(143, 142, 142, 0.2); /* Ombre pour un effet 3D léger */
+	margin-bottom: 10px;
+	padding: 0 10px; /* Ajout de padding pour l'espacement intérieur */
+	border: 1px solid white;
+}
+
+.btn-shine:hover,
+.btn-shine:focus {
+	background-color: #555; /* Fond plus clair lors du survol */
+	color: white;
+	box-shadow: 0 4px 15px rgba(167, 167, 167, 0.4); /* Ombre plus prononcée pour effet de soulèvement */
+	transform: scale(
+		rgba(60, 49, 49, 0.4) 1.05
+	); /* Effet de zoom léger pour donner une impression de "décollage" */
+	text-decoration: none;
+}
+
+.btn-shine:hover img {
+	filter: brightness(0) invert(1); /* Rend les icônes blanches au survol */
+}
+
+.text-btn {
+	font-size: 17px;
+}
+
+.btn-shine img {
+	width: 25px; /* Ajuster selon la taille désirée des icônes */
+	height: auto;
+	margin-right: 5px; /* Espace entre l'icône et le texte */
+}
+
+.btn-shine:hover {
+	background-color: #555; /* Fond plus clair lors du survol */
+	color: white;
+	box-shadow: 0 4px 15px rgba(167, 167, 167, 0.4); /* Ombre plus prononcée pour effet de soulèvement */
+	text-decoration: none;
+}
+
+.btn-shine:hover img {
+	filter: brightness(0) invert(1); /* Rend les icônes blanches au survol */
+}
+
+/* Styles de base */
+body {
+	font-family: 'Arial', sans-serif; /* Polices cohérentes */
+	color: #ffffff; /* Couleur de texte pour un fond sombre */
+	background-color: #121212; /* Couleur de fond sombre */
+	line-height: 1.6;
+	margin: 0;
+	padding: 20px;
+}
+
+.experience-title {
+	position: relative;
+	color: #333; /* ou toute autre couleur appropriée */
+	font-size: 35px; /* ajuster la taille de police selon les besoins */
+	padding-left: 80px; /* espace entre la barre et le texte */
+}
+
+.experience-title::before {
+	content: ''; /* nécessaire pour générer le pseudo-élément */
+	position: absolute;
+	left: 0;
+	top: 50%; /* centrage vertical */
+	transform: translateY(-50%); /* aligne parfaitement au centre vertical */
+	width: 60px; /* largeur de la barre, ajustez selon vos besoins */
+	height: 2px; /* hauteur de la barre */
+	background-color: #333; /* couleur de la barre */
+}
+
+.fullstack {
+	font-size: 25px; /* Ajuster la taille de la police */
+	color: #ffffff; /* Changer la couleur si nécessaire */
+}
+
+.cercle img {
+	width: 15px; /* Définis la largeur souhaitée de l'image */
+	height: auto; /* Garde la hauteur proportionnelle à la largeur */
+	vertical-align: center;
+	margin-right: 10px;
+	margin-top: 5px;
+}
+
+.cercle {
+	display: inline-block; /* Affiche les paragraphes côte à côte */
+	margin-right: 20px; /* Ajoute un peu d'espace entre eux */
+	margin-bottom: 30px;
+}
+
+.map img {
+	width: 20px; /* Définis la largeur souhaitée de l'image */
+	height: auto; /* Garde la hauteur proportionnelle à la largeur */
+	vertical-align: center;
+	margin-top: 5px;
+}
+
+.map {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.description {
+	text-align: center;
+}
+
+h1 {
+	font-size: 45px;
+	color: #fff;
+}
+
+h2 {
+	font-size: 45px;
+	color: #fff;
+}
+
+a {
+	color: #4a90e2; /* Bleu pour les liens */
+	text-decoration: none; /* Pas de soulignement */
+}
+
+a:hover {
+	text-decoration: underline; /* Soulignement au survol */
+}
+
+/* Header */
+#header {
+	margin-bottom: 5px;
+	padding: 15px;
+	margin-left: 30px;
+}
+
+.liens {
+	padding: 15px;
+	margin-left: 30px;
+}
+
+/* Section spécifique */
+#professional_experience,
+#education,
+#skills,
+#languages,
+#interests,
+#soft_skills {
+	margin-bottom: 30px;
+}
+
+#skills {
+	margin-top: 60px;
+}
+
+/* Expérience professionnelle */
+#professional_experience h2,
+#education h2,
+#skills h2,
+#languages h2,
+#interests h2,
+#soft_skills h2 {
+	border-bottom: 2px solid #333; /* Ligne de séparation pour les sections */
+	padding-bottom: 5px;
+	margin-bottom: 80px;
+}
+
+/* Listes */
+ul {
+	list-style: none; /* Pas de puces */
+	padding: 0;
+}
+
+/* Articles dans les sections */
+.experience-item,
+.skills-item,
+.education-item,
+.languages-item,
+.portfolio-item,
+.soft_skills-item,
+.strong {
+	margin: 60px;
+}
+
+.techno {
+	padding: 20px;
+}
+
+#interests {
+	margin-bottom: 100px; /* Ajuster cette valeur selon l'espace désiré */
+}

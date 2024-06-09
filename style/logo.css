@@ -1,0 +1,158 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: white;
+}
+
+.logos {
+	width: 100%; /* Ajuste la largeur selon le conteneur parent */
+	overflow: hidden; /* Cache tout contenu qui déborde */
+	white-space: nowrap; /* Assure que les logos restent sur une seule ligne */
+	position: relative;
+	padding: 60px 0;
+}
+
+.logos-slide {
+	white-space: nowrap;
+	display: inline-block;
+	animation: scrollLogos 30s linear infinite;
+}
+
+.logos-slide img {
+	width: 50px; /* Taille des logos */
+	height: auto; /* Garde les proportions d'origine */
+	display: inline-block;
+	margin: 0 40px; /* Espace entre les logos */
+}
+
+.logos-slide .python {
+	width: 60px;
+	height: auto;
+	vertical-align: middle;
+	margin-bottom: 20px;
+}
+
+@keyframes scrollLogos {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-100%);
+	}
+}
+
+.logos-2 {
+	width: 100%; /* Ajuste la largeur selon le conteneur parent */
+	overflow: hidden; /* Cache tout contenu qui déborde */
+	white-space: nowrap; /* Assure que les logos restent sur une seule ligne */
+	position: relative;
+	padding: 60px 0;
+}
+
+.logos-slide-2 img {
+	width: 50px; /* Taille des logos */
+	height: auto; /* Garde les proportions d'origine */
+	display: inline-block;
+	margin: 0 42px; /* Espace entre les logos */
+}
+
+.logos-slide-2 .mongo {
+	width: 80px;
+	height: auto;
+	vertical-align: top;
+}
+
+.illustration {
+	width: 100%;
+	position: relative;
+	overflow: hidden; /* Cache la barre de défilement horizontale */
+	padding: 20px 0;
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+	white-space: nowrap;
+	margin-top: 60px;
+}
+
+.illustration::-webkit-scrollbar {
+	display: none; /* Cache la barre de défilement pour Webkit (Chrome, Safari) */
+}
+
+/* Styles communs pour illustration et portfolio */
+.illustration-slide,
+.portfolio-slide {
+	display: flex;
+	gap: 20px;
+	overflow-x: auto;
+	overflow-y: hidden;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+	white-space: nowrap;
+	align-items: center; /* Assure que les éléments sont centrés verticalement */
+}
+
+/* Spécifique pour Drawing */
+.drawing-slide img {
+	width: auto; /* Adapte la largeur automatiquement */
+	max-width: 200px; /* Limite la largeur maximale pour les illustrations */
+	height: auto; /* Hauteur ajustée automatiquement pour conserver les proportions */
+	pointer-events: none; /* Empêche les interactions pendant le glissement */
+	user-select: none; /* Empêche la sélection de texte/image */
+	border-radius: 10px; /* Arrondit les bords de l'image */
+}
+
+/* Spécifique pour Portfolio */
+.portfolio-slide img {
+	width: auto;
+	max-width: 300px; /* Largeur maximale plus grande pour les images du portfolio */
+	height: auto;
+	pointer-events: auto; /* Permet les interactions pour les clics */
+	user-select: none; /* Empêche la sélection de texte/image */
+	border-radius: 10px;
+}
+
+/* Boutons de défilement pour chaque section */
+.scroll-btn {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	border-radius: 50%;
+	width: 60px;
+	height: 60px;
+	background-color: #fff;
+	border: none;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #333;
+	font-size: 16px;
+	z-index: 10;
+	opacity: 70%;
+	pointer-events: auto; /* Permet les clics sur les boutons */
+}
+
+.scroll-btn.left {
+	left: 10px;
+}
+
+.scroll-btn.right {
+	right: 10px;
+}
+
+/* Styles pour le zoom au survol des images */
+.portfolio-item img:hover,
+.drawing-slide img:hover {
+	transform: scale(1.05); /* Agrandit légèrement l'image au survol */
+	cursor: pointer;
+}
+
+/* Empêcher la sélection et le glissement des images lors du défilement */
+.illustration-slide img,
+.portfolio-slide img {
+	-webkit-user-drag: none; /* Empêche le glissement des images */
+	user-select: none; /* Empêche la sélection des images */
+}

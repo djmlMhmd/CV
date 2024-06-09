@@ -1,0 +1,102 @@
+.navbar {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: flex;
+	justify-content: center;
+	padding: 7px 15px;
+	box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+	border-radius: 10px;
+	backdrop-filter: blur(10px);
+	border: 0.5px solid white;
+	z-index: 1000;
+	width: 100%; /* Utilise la largeur entière à la base */
+	max-width: 370px; /* Maximum width to prevent it from becoming too wide on larger screens */
+	height: auto; /* Auto height for flexibility */
+	margin-bottom: 20px;
+}
+
+.nav-links {
+	list-style: none;
+	display: flex;
+	padding: 0;
+	margin: 0;
+}
+
+.nav-item {
+	margin: 0 8px;
+	color: #9b9b9b;
+	font-size: 10px;
+	transition: color 0.3s, transform 0.3s;
+	display: inline-flex;
+	align-items: center;
+}
+
+.nav-item:hover,
+.nav-item:focus {
+	color: #ccc;
+	transform: scale(1.1);
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.nav-item.active,
+.nav-item:hover,
+.nav-item:focus {
+	color: #fff; /* Couleur blanche pour l'élément actif ou au survol */
+}
+
+.nav-item.active {
+	color: #fff; /* Assure que l'item actif est aussi mis en évidence */
+	background-color: rgba(
+		255,
+		255,
+		255,
+		0.2
+	); /* Fond légèrement visible pour l'élément actif */
+}
+
+.nav-item img {
+	width: 17px;
+	height: auto;
+}
+
+.nav-item:hover img {
+	filter: brightness(0) invert(1);
+}
+
+/* Adjustments for tablets and smaller devices */
+@media (max-width: 900px) {
+	.navbar {
+		padding: 5px 10px; /* Reduced padding */
+		font-size: 11px; /* Slightly smaller font size */
+	}
+}
+
+/* Adjustments for small mobile devices */
+@media (max-width: 550px) {
+	.navbar {
+		padding: 5px; /* Further reduced padding */
+		font-size: 10px; /* Smaller font size for space efficiency */
+	}
+
+	.nav-item {
+		margin: 0 5px; /* Smaller margins to use space more effectively */
+		padding: 5px; /* Adequate padding for touch targets */
+		font-size: 9px; /* Smaller font size for item labels */
+	}
+
+	.nav-item img {
+		width: 15px; /* Smaller icons */
+		height: auto; /* Maintain aspect ratio */
+	}
+
+	.nav-links {
+		display: flex;
+		align-items: center;
+		height: 100%; /* Hauteur totale pour aligner verticalement */
+	}
+}

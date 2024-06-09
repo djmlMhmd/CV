@@ -1,8 +1,3 @@
-#portfolio {
-	margin-bottom: 30px;
-	padding: 20px 0; /* Ajoute de l'espace verticalement pour ne pas coller aux bords */
-}
-
 .portfolio-item {
 	flex: 0 0 auto; /* Évite que les éléments se rétrécissent ou s'étirent */
 	width: 420px; /* Fixe une largeur pour les items du portfolio */

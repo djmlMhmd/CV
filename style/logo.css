@@ -66,6 +66,30 @@ body {
 	vertical-align: top;
 }
 
+/* Responsive Design: ajustements pour tablettes */
+@media (max-width: 768px) {
+	.logos-slide-2 img {
+		width: 40px; /* Taille réduite des logos */
+		margin: 0 15px; /* Espace réduit entre les logos */
+	}
+
+	.logos-slide-2 .mongo {
+		width: 60px; /* Taille réduite pour MongoDB */
+	}
+}
+
+/* Responsive Design: ajustements pour mobiles */
+@media (max-width: 480px) {
+	.logos-slide-2 img {
+		width: 30px; /* Taille plus petite des logos pour les écrans très petits */
+		margin: 0 10px; /* Espace minimal entre les logos */
+	}
+
+	.logos-slide-2 .mongo {
+		width: 45px; /* Encore plus petit pour MongoDB */
+	}
+}
+
 .illustration {
 	width: 100%;
 	position: relative;

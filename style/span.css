@@ -46,12 +46,54 @@
 	color: #333;
 }
 
+/* Adaptation pour les écrans de taille moyenne */
+@media (max-width: 768px) {
+	.year {
+		font-size: 30px; /* Légèrement plus petit pour les tablettes */
+	}
+}
+
+/* Adaptation pour les petits écrans */
+@media (max-width: 480px) {
+	.year {
+		font-size: 30px; /* Encore plus petit pour les téléphones mobiles */
+	}
+}
+
 .poste {
 	font-size: 30px;
 }
 
+/* Adaptation pour les écrans de taille moyenne */
+@media (max-width: 768px) {
+	.poste {
+		font-size: 25px; /* Légèrement plus petit pour les tablettes */
+	}
+}
+
+/* Adaptation pour les petits écrans */
+@media (max-width: 480px) {
+	.poste {
+		font-size: 20px; /* Encore plus petit pour les téléphones mobiles */
+	}
+}
+
 .entreprise {
 	font-size: 35px;
+}
+
+/* Adaptation pour les écrans de taille moyenne */
+@media (max-width: 768px) {
+	.entreprise {
+		font-size: 28px; /* Légèrement plus petit pour les tablettes */
+	}
+}
+
+/* Adaptation pour les petits écrans */
+@media (max-width: 480px) {
+	.entreprise {
+		font-size: 28px; /* Encore plus petit pour les téléphones mobiles */
+	}
 }
 
 .tech-stack {
@@ -116,9 +158,25 @@
 }
 
 .tech-stack span {
-	background-color: #333; /* Fond pour les compétences */
+	background-color: #707070; /* Fond pour les compétences */
 	padding: 5px 10px;
-	border-radius: 10px; /* Bordures arrondies */
-	font-size: 10px;
+	border-radius: 7px; /* Bordures arrondies */
+	font-size: 8px;
 	margin-top: 10px;
+}
+
+/* Réduction de la taille de police et du padding pour les tablettes et les mobiles */
+@media (max-width: 768px) {
+	.tech-stack span {
+		font-size: 9px; /* Légèrement plus petit sur les tablettes */
+		padding: 4px 8px;
+	}
+}
+
+/* Réduction supplémentaire pour les smartphones */
+@media (max-width: 480px) {
+	.tech-stack span {
+		font-size: 8.5px; /* Plus petit pour les smartphones */
+		padding: 4px 6px;
+	}
 }

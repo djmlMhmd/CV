@@ -21,6 +21,22 @@
 	border: 1px solid white;
 }
 
+/* Adaptations pour les petits écrans */
+@media (max-width: 600px) {
+	.btn-shine {
+		font-size: 14px; /* Réduire la taille de la police */
+		padding: 0 8px; /* Ajuster le padding pour garder le contenu bien aligné */
+		min-width: 80px; /* Réduire la largeur minimale pour économiser de l'espace */
+		margin-left: 5px;
+		padding: auto;
+	}
+
+	.btn-shine img {
+		width: 20px; /* Réduire la taille de l'icône */
+		margin-right: 3px; /* Ajuster l'espace entre l'icône et le texte */
+	}
+}
+
 .btn-shine:hover,
 .btn-shine:focus {
 	background-color: #555; /* Fond plus clair lors du survol */
@@ -118,6 +134,19 @@ body {
 
 .description {
 	text-align: center;
+	padding: 0 20px; /* Ajoute un padding pour ne pas que le texte touche les bords sur les petits écrans */
+	max-width: 800px; /* Optionnel: limite la largeur de la description pour une meilleure lecture */
+	margin: auto; /* Centre la description si une max-width est définie */
+}
+
+/* Adaptation pour les petits écrans */
+@media (max-width: 600px) {
+	.description {
+		padding: 0 10px; /* Réduit le padding sur les très petits écrans */
+		font-size: 14px; /* Optionnel: ajuste la taille de la police pour une meilleure lisibilité */
+		margin-right: 15px;
+		text-align: start;
+	}
 }
 
 h1 {

@@ -52,6 +52,12 @@ document.addEventListener('DOMContentLoaded', function () {
 			closeModal();
 		}
 	});
+	window.addEventListener('touchstart', function (event) {
+		const modal = document.getElementById('portfolioModal');
+		if (event.target === modal) {
+			closeModal();
+		}
+	});
 });
 
 function openModal(projectName) {

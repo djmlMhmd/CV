@@ -53,11 +53,11 @@
 
 .close {
 	position: absolute;
-	top: 20px;
+	top: 10px;
 	right: 20px;
 	font-size: 30px;
 	cursor: pointer;
-	color: gray;
+	color: rgb(253, 252, 252);
 }
 
 .modal-images img {

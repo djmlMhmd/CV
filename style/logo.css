@@ -119,7 +119,6 @@ body {
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
-	border-radius: 50%;
 	width: 60px;
 	height: 60px;
 	background-color: #fff;
@@ -130,9 +129,9 @@ body {
 	justify-content: center;
 	color: #333;
 	font-size: 16px;
+	opacity: 0.7;
 	z-index: 10;
-	opacity: 70%;
-	pointer-events: auto; /* Permet les clics sur les boutons */
+	border-radius: 100%;
 }
 
 .scroll-btn.left {
@@ -141,6 +140,33 @@ body {
 
 .scroll-btn.right {
 	right: 10px;
+}
+
+/* Requêtes média pour les petits écrans */
+@media (max-width: 768px) {
+	.portfolio-item {
+		width: 100%; /* Les éléments du portfolio prennent toute la largeur */
+		margin-top: 20px; /* Réduit l'espace au-dessus des items */
+	}
+
+	.portfolio-item img {
+		max-width: 100%; /* Les images s'adaptent à la largeur du conteneur */
+	}
+
+	.scroll-btn {
+		width: 40px; /* Réduit la taille des boutons de défilement */
+		height: 40px; /* Réduit la taille des boutons de défilement */
+		font-size: 12px; /* Taille de police réduite pour les boutons */
+	}
+
+	/* Ajuste la position des boutons pour qu'ils ne recouvrent pas les images */
+	.scroll-btn.left {
+		left: 5px;
+	}
+
+	.scroll-btn.right {
+		right: 5px;
+	}
 }
 
 /* Styles pour le zoom au survol des images */

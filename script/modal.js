@@ -37,6 +37,23 @@ const projectDetails = {
 	},
 };
 
+document.addEventListener('DOMContentLoaded', function () {
+	// Attach click event listeners to portfolio items
+	document.querySelectorAll('.portfolio-item').forEach((item) => {
+		item.addEventListener('click', function () {
+			openModal(this.dataset.projectName);
+		});
+	});
+
+	// Close modal when clicking outside of the modal content
+	window.addEventListener('click', function (event) {
+		const modal = document.getElementById('portfolioModal');
+		if (event.target === modal) {
+			closeModal();
+		}
+	});
+});
+
 function openModal(projectName) {
 	const modal = document.getElementById('portfolioModal');
 	const modalTitle = document.getElementById('modalTitle');

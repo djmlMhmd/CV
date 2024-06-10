@@ -2,6 +2,9 @@
 	flex: 0 0 auto; /* Évite que les éléments se rétrécissent ou s'étirent */
 	width: 420px; /* Fixe une largeur pour les items du portfolio */
 	margin-top: 100px;
+	display: flex;
+	flex-direction: column;
+	align-items: center; /* Centre les éléments verticalement */
 }
 
 .portfolio-item img {
@@ -42,4 +45,25 @@
 
 .portfolio-item img:hover {
 	transform: scale(1.05); /* Zooms in the image */
+}
+/* Media Queries pour adapter le portfolio sur petits écrans */
+@media (max-width: 768px) {
+	.portfolio-item {
+		width: 95%; /* Utilise presque toute la largeur disponible, avec un peu de marge */
+		margin: 50px auto; /* Ajoute une marge automatique pour centrer horizontalement et réduire l'espace vertical */
+	}
+
+	.portfolio-item img {
+		max-width: 100%; /* Permet à l'image de s'adapter à la largeur du conteneur */
+		max-height: auto; /* Ajuste la hauteur automatiquement */
+	}
+
+	.portfolio-item p {
+		font-size: 16px; /* Réduit la taille de la police pour les petits écrans */
+	}
+
+	.portfolio-container {
+		gap: 10px; /* Réduit l'espacement entre les éléments */
+		padding: 0 10px; /* Ajoute un padding pour éviter que les éléments touchent les bords */
+	}
 }

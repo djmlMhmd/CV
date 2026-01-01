@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Éditeur PDF - Modifier votre PDF</title>
+    <link rel="stylesheet" href="style/pdf-editor.css">
+</head>
+<body>
+    <div class="editor-container">
+        <header class="editor-header">
+            <h1>📝 Éditeur de PDF</h1>
+            <p class="subtitle">Chargez votre PDF et modifiez le texte directement</p>
+        </header>
+
+        <div class="toolbar">
+            <div class="file-controls">
+                <label for="pdfInput" class="btn btn-primary">
+                    📁 Charger un PDF
+                    <input type="file" id="pdfInput" accept=".pdf" style="display: none;">
+                </label>
+                <button id="savePdf" class="btn btn-success" disabled>
+                    💾 Sauvegarder
+                </button>
+                <button id="resetPdf" class="btn btn-secondary" disabled>
+                    🔄 Réinitialiser
+                </button>
+            </div>
+
+            <div class="page-controls" style="display: none;">
+                <button id="prevPage" class="btn btn-nav">◀ Page précédente</button>
+                <span id="pageInfo">Page <span id="pageNum">1</span> / <span id="pageCount">1</span></span>
+                <button id="nextPage" class="btn btn-nav">Page suivante ▶</button>
+            </div>
+
+            <div class="zoom-controls">
+                <button id="zoomOut" class="btn btn-zoom">🔍-</button>
+                <span id="zoomLevel">100%</span>
+                <button id="zoomIn" class="btn btn-zoom">🔍+</button>
+            </div>
+        </div>
+
+        <div class="editor-workspace">
+            <div class="canvas-container" id="canvasContainer">
+                <canvas id="pdfCanvas"></canvas>
+                <div id="textLayer" class="text-layer"></div>
+            </div>
+
+            <div class="welcome-screen" id="welcomeScreen">
+                <div class="welcome-content">
+                    <div class="icon">📄</div>
+                    <h2>Bienvenue dans l'éditeur PDF</h2>
+                    <p>Cliquez sur "Charger un PDF" pour commencer à éditer votre document</p>
+                    <div class="features">
+                        <div class="feature">
+                            <span class="feature-icon">✏️</span>
+                            <span>Éditez le texte directement sur le PDF</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">🎨</span>
+                            <span>Interface intuitive et moderne</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">💾</span>
+                            <span>Sauvegardez vos modifications facilement</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="status-bar">
+            <span id="statusMessage">Prêt</span>
+        </div>
+    </div>
+
+    <!-- Modal d'édition -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Modifier le texte</h3>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <textarea id="editTextArea" rows="5"></textarea>
+                <div class="text-controls">
+                    <label>
+                        Taille:
+                        <input type="number" id="fontSize" min="8" max="72" value="12">
+                    </label>
+                    <label>
+                        Couleur:
+                        <input type="color" id="textColor" value="#000000">
+                    </label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="cancelEdit" class="btn btn-secondary">Annuler</button>
+                <button id="applyEdit" class="btn btn-primary">Appliquer</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bibliothèques PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+
+    <!-- Script de l'éditeur -->
+    <script src="script/pdf-editor.js"></script>
+</body>
+</html>

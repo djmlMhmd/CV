@@ -16,19 +16,11 @@
 	font-size: 14px;
 }
 
-/* Styles pour les logos */
-.logos img,
-.logos-slide img,
-.logos-slide-2 img {
-	height: 30px; /* Hauteur des logos */
-	width: auto;
-	margin-right: 10px; /* Espace entre les logos */
-}
 
 #professional_experience {
-	color: #fff; /* Texte blanc */
+	color: #fff;
 	padding: 20px;
-	font-family: 'Arial', sans-serif;
+	font-family: 'Inter', 'Arial', sans-serif;
 	margin-bottom: 10px;
 }
 

@@ -1,104 +1,149 @@
+/* Bouton principal Hire */
+.btn-primary {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	height: 36px;
+	padding: 0 18px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	border-radius: 8px;
+	cursor: pointer;
+	background-color: #fff;
+	color: #111;
+	font-family: 'Inter', 'Arial', sans-serif;
+	font-size: 13px;
+	font-weight: 600;
+	text-decoration: none;
+	border: none;
+	transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary img {
+	width: 16px;
+	height: auto;
+	margin-right: 7px;
+	filter: brightness(0);
+}
+
+.btn-primary:hover {
+	background-color: #e8e8e8;
+	transform: translateY(-2px);
+	box-shadow: 0 6px 20px rgba(255, 255, 255, 0.15);
+	text-decoration: none;
+	color: #111;
+}
+
 .btn-shine {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	min-width: 100px; /* Ajustée pour mieux s'adapter au contenu */
-	height: 30px; /* Hauteur fixe pour tous les boutons */
-	margin-left: 10px;
-	border: none;
-	outline: none;
-	border-radius: 7px;
-	cursor: pointer;
-	background-color: #b1b1b1; /* Fond gris sombre des boutons */
-	color: #3d3d3d; /* Couleur de texte initiale */
-	font-weight: 400;
-	font-size: 300px; /* Taille du texte ajustée */
-	text-decoration: none;
-	transition: background-color 0.3s, transform 0.3s; /* Animation douce pour le survol */
-	box-shadow: 2px 2px 10px rgba(143, 142, 142, 0.2); /* Ombre pour un effet 3D léger */
+	min-width: 90px;
+	height: 36px;
+	margin-left: 0;
+	margin-right: 8px;
 	margin-bottom: 10px;
-	padding: 0 10px; /* Ajout de padding pour l'espacement intérieur */
-	border: 1px solid white;
+	padding: 0 14px;
+	border-radius: 8px;
+	cursor: pointer;
+	background-color: rgba(255, 255, 255, 0.07);
+	color: #ccc;
+	font-family: 'Inter', 'Arial', sans-serif;
+	font-size: 13px;
+	font-weight: 400;
+	text-decoration: none;
+	border: 1px solid rgba(255, 255, 255, 0.15);
+	transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Adaptations pour les petits écrans */
-@media (max-width: 600px) {
-	.btn-shine {
-		font-size: 14px; /* Réduire la taille de la police */
-		padding: 0 8px; /* Ajuster le padding pour garder le contenu bien aligné */
-		min-width: 80px; /* Réduire la largeur minimale pour économiser de l'espace */
-		margin-left: 5px;
-		padding: auto;
-	}
+.btn-shine img {
+	width: 18px;
+	height: auto;
+	margin-right: 7px;
+	opacity: 0.7;
+	transition: opacity 0.2s ease;
+}
 
-	.btn-shine img {
-		width: 20px; /* Réduire la taille de l'icône */
-		margin-right: 3px; /* Ajuster l'espace entre l'icône et le texte */
-	}
+.text-btn {
+	font-size: 13px;
 }
 
 .btn-shine:hover,
 .btn-shine:focus {
-	background-color: #555; /* Fond plus clair lors du survol */
-	color: white;
-	box-shadow: 0 4px 15px rgba(167, 167, 167, 0.4); /* Ombre plus prononcée pour effet de soulèvement */
-	transform: scale(
-		rgba(60, 49, 49, 0.4) 1.05
-	); /* Effet de zoom léger pour donner une impression de "décollage" */
+	background-color: rgba(255, 255, 255, 0.12);
+	color: #fff;
+	border-color: rgba(255, 255, 255, 0.3);
+	transform: translateY(-2px);
+	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
 	text-decoration: none;
 }
 
 .btn-shine:hover img {
-	filter: brightness(0) invert(1); /* Rend les icônes blanches au survol */
+	filter: brightness(0) invert(1);
+	opacity: 1;
 }
 
-.text-btn {
-	font-size: 17px;
-}
+@media (max-width: 600px) {
+	.btn-shine {
+		min-width: 70px;
+		padding: 0 10px;
+		margin-left: 6px;
+	}
 
-.btn-shine img {
-	width: 25px; /* Ajuster selon la taille désirée des icônes */
-	height: auto;
-	margin-right: 5px; /* Espace entre l'icône et le texte */
-}
-
-.btn-shine:hover {
-	background-color: #555; /* Fond plus clair lors du survol */
-	color: white;
-	box-shadow: 0 4px 15px rgba(167, 167, 167, 0.4); /* Ombre plus prononcée pour effet de soulèvement */
-	text-decoration: none;
-}
-
-.btn-shine:hover img {
-	filter: brightness(0) invert(1); /* Rend les icônes blanches au survol */
+	.btn-shine img {
+		width: 16px;
+		margin-right: 5px;
+	}
 }
 
 /* Styles de base */
+html {
+	scroll-behavior: smooth;
+}
+
 body {
-	font-family: 'Arial', sans-serif; /* Polices cohérentes */
-	color: #ffffff; /* Couleur de texte pour un fond sombre */
-	background-color: #121212; /* Couleur de fond sombre */
+	font-family: 'Inter', 'Arial', sans-serif;
+	color: #ffffff;
+	background-color: #121212;
 	line-height: 1.6;
 	margin: 0;
 	padding: 20px;
 }
 
+/* Gradient ambient hero */
+.gradient {
+	position: fixed;
+	top: -200px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 600px;
+	height: 600px;
+	background: radial-gradient(ellipse at center, rgba(100, 100, 255, 0.06) 0%, transparent 70%);
+	pointer-events: none;
+	z-index: 0;
+}
+
 .experience-title {
 	position: relative;
-	color: #333; /* ou toute autre couleur appropriée */
-	font-size: 35px; /* ajuster la taille de police selon les besoins */
-	padding-left: 80px; /* espace entre la barre et le texte */
+	color: #888;
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	padding-left: 72px;
+	display: block;
+	margin-bottom: 8px;
 }
 
 .experience-title::before {
-	content: ''; /* nécessaire pour générer le pseudo-élément */
+	content: '';
 	position: absolute;
 	left: 0;
-	top: 50%; /* centrage vertical */
-	transform: translateY(-50%); /* aligne parfaitement au centre vertical */
-	width: 60px; /* largeur de la barre, ajustez selon vos besoins */
-	height: 2px; /* hauteur de la barre */
-	background-color: #333; /* couleur de la barre */
+	top: 50%;
+	transform: translateY(-50%);
+	width: 52px;
+	height: 1px;
+	background-color: #444;
 }
 
 .fullstack {
@@ -150,12 +195,16 @@ body {
 }
 
 h1 {
-	font-size: 45px;
+	font-size: 46px;
+	font-weight: 700;
+	letter-spacing: -0.02em;
 	color: #fff;
+	margin: 0 0 4px;
 }
 
 h2 {
 	font-size: 45px;
+	font-weight: 700;
 	color: #fff;
 }
 
@@ -176,8 +225,12 @@ a:hover {
 }
 
 .liens {
-	padding: 15px;
+	padding: 0 15px 15px;
 	margin-left: 30px;
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 0;
 }
 
 /* Section spécifique */
@@ -191,7 +244,8 @@ a:hover {
 }
 
 #skills {
-	margin-top: 60px;
+	margin-top: 40px;
+	margin-bottom: 20px;
 }
 
 /* Expérience professionnelle */
@@ -220,12 +274,31 @@ ul {
 .portfolio-item,
 .soft_skills-item,
 .strong {
-	margin: 60px;
+	margin: 40px 60px;
 }
 
-.techno {
-	padding: 20px;
+@media (max-width: 768px) {
+	.experience-item,
+	.skills-item,
+	.education-item,
+	.languages-item,
+	.portfolio-item,
+	.soft_skills-item {
+		margin: 30px 20px;
+	}
 }
+
+@media (max-width: 480px) {
+	.experience-item,
+	.skills-item,
+	.education-item,
+	.languages-item,
+	.portfolio-item,
+	.soft_skills-item {
+		margin: 24px 12px;
+	}
+}
+
 
 #interests {
 	margin-bottom: 100px; /* Ajuster cette valeur selon l'espace désiré */

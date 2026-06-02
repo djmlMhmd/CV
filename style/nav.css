@@ -14,7 +14,7 @@
 	border: 0.5px solid white;
 	z-index: 1000;
 	width: 100%; /* Utilise la largeur entière à la base */
-	max-width: 370px; /* Maximum width to prevent it from becoming too wide on larger screens */
+	max-width: 440px; /* Maximum width to prevent it from becoming too wide on larger screens */
 	height: auto; /* Auto height for flexibility */
 	margin-bottom: 20px;
 }
@@ -46,17 +46,14 @@
 .nav-item.active,
 .nav-item:hover,
 .nav-item:focus {
-	color: #fff; /* Couleur blanche pour l'élément actif ou au survol */
+	color: #fff;
 }
 
 .nav-item.active {
-	color: #fff; /* Assure que l'item actif est aussi mis en évidence */
-	background-color: rgba(
-		255,
-		255,
-		255,
-		0.2
-	); /* Fond légèrement visible pour l'élément actif */
+	color: #fff;
+	background-color: rgba(255, 255, 255, 0.14);
+	border-radius: 5px;
+	padding: 3px 6px;
 }
 
 .nav-item img {

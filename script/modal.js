@@ -1,7 +1,6 @@
-// Dictionnaire des images par projet
 const projectDetails = {
 	Planifi: {
-		title: 'Planifi Project',
+		title: 'Planifi',
 		images: [
 			'img/portfolio/Planifi/PLANIFI.png',
 			'img/portfolio/Planifi/4c982e2f-13ba-4f6e-978a-e6096ad63380.JPG',
@@ -12,7 +11,7 @@ const projectDetails = {
 		link: 'https://github.com/djmlMhmd/Planifi-ReadMe',
 	},
 	Printf: {
-		title: 'Printf() Project',
+		title: 'Printf()',
 		images: [
 			'img/portfolio/Printf/PRINTF.png',
 			'img/portfolio/Printf/printf_2.png',
@@ -21,8 +20,9 @@ const projectDetails = {
 		link: 'https://github.com/djmlMhmd/holbertonschool-printf/blob/master/README.md',
 	},
 	Airbnb: {
-		title: 'Airbnb Project',
+		title: 'AirBnB Clone',
 		images: [
+			'img/portfolio/Airbnb/Airbnb.png',
 			'img/portfolio/Airbnb/A1.png',
 			'img/portfolio/Airbnb/A2.png',
 			'img/portfolio/Airbnb/A4.png',
@@ -31,74 +31,51 @@ const projectDetails = {
 		link: 'https://github.com/djmlMhmd/holbertonschool-AirBnB_clone/blob/main/README.md',
 	},
 	Python: {
-		title: 'Python Project',
+		title: 'Python',
 		images: ['img/portfolio/Python/Python.png'],
 		link: 'https://github.com/djmlMhmd/holbertonschool-higher_level_programming/blob/main/README.md',
 	},
 };
 
-document.addEventListener('DOMContentLoaded', function () {
-	// Attach click event listeners to portfolio items
-	document.querySelectorAll('.portfolio-item').forEach((item) => {
-		item.addEventListener('click', function () {
-			openModal(this.dataset.projectName);
-		});
-	});
-
-	// Close modal when clicking outside of the modal content
-	window.addEventListener('click', function (event) {
-		const modal = document.getElementById('portfolioModal');
-		if (event.target === modal) {
-			closeModal();
-		}
-	});
-	window.addEventListener('touchstart', function (event) {
-		const modal = document.getElementById('portfolioModal');
-		if (event.target === modal) {
-			closeModal();
-		}
-	});
-});
-
 function openModal(projectName) {
 	const modal = document.getElementById('portfolioModal');
-	const modalTitle = document.getElementById('modalTitle');
-	const modalLink = document.getElementById('modalLink');
-	const modalImages = document.querySelector('.modal-images');
-
-	// Clear previous images
-	modalImages.innerHTML = '';
-
-	// Retrieve project details based on the project name
 	const project = projectDetails[projectName];
+	if (!project) return;
 
-	if (project) {
-		modalTitle.textContent = project.title; // Set the title
-		modalLink.href = project.link; // Set the link URL
-		modalLink.textContent = 'Learn more about ' + projectName; // Set the link text
+	document.getElementById('modalTitle').textContent = project.title;
+	document.getElementById('modalLink').href = project.link;
 
-		// Append images
-		project.images.forEach((img) => {
-			const imageElement = document.createElement('img');
-			imageElement.src = img;
-			modalImages.appendChild(imageElement);
-		});
+	const container = modal.querySelector('.modal-images');
+	container.innerHTML = '';
+	project.images.forEach((src) => {
+		const img = document.createElement('img');
+		img.src = src;
+		img.alt = project.title;
+		container.appendChild(img);
+	});
 
-		modal.style.display = 'flex'; // Show modal
-		document.body.style.overflow = 'hidden'; // Disable body scroll
-	}
+	document.body.style.overflow = 'hidden';
+	modal.style.display = 'flex';
+	requestAnimationFrame(() => modal.classList.add('open'));
 }
 
 function closeModal() {
 	const modal = document.getElementById('portfolioModal');
-	modal.style.display = 'none'; // Hide modal
-	document.body.style.overflow = 'auto'; // Re-enable body scroll
+	modal.classList.remove('open');
+	setTimeout(() => {
+		modal.style.display = 'none';
+		document.body.style.overflow = '';
+	}, 200);
 }
 
-// Close modal when clicking outside of the modal content
-window.onclick = function (event) {
+document.addEventListener('DOMContentLoaded', () => {
 	const modal = document.getElementById('portfolioModal');
-	if (event.target === modal) {
-		closeModal();
-	}
-};
+
+	modal.addEventListener('click', (e) => {
+		if (e.target === modal) closeModal();
+	});
+
+	document.addEventListener('keydown', (e) => {
+		if (e.key === 'Escape') closeModal();
+	});
+});

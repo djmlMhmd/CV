@@ -8,201 +8,77 @@ body {
 	background: white;
 }
 
-.logos {
-	width: 100%; /* Ajuste la largeur selon le conteneur parent */
-	overflow: hidden; /* Cache tout contenu qui déborde */
-	white-space: nowrap; /* Assure que les logos restent sur une seule ligne */
-	position: relative;
-	padding: 60px 0;
+.skills-section-label {
+	font-size: 11px;
+	font-weight: 500;
+	color: #555;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	margin: 24px 60px 14px;
 }
 
-.logos-slide {
-	white-space: nowrap;
-	display: inline-block;
-	animation: scrollLogos 30s linear infinite;
-}
-
-.logos-slide img {
-	width: 50px; /* Taille des logos */
-	height: auto; /* Garde les proportions d'origine */
-	display: inline-block;
-	margin: 0 40px; /* Espace entre les logos */
-}
-
-.logos-slide .python {
-	width: 60px;
-	height: auto;
-	vertical-align: middle;
-	margin-bottom: 20px;
-}
-
-@keyframes scrollLogos {
-	0% {
-		transform: translateX(0);
-	}
-	100% {
-		transform: translateX(-100%);
-	}
-}
-
-.logos-2 {
-	width: 100%; /* Ajuste la largeur selon le conteneur parent */
-	overflow: hidden; /* Cache tout contenu qui déborde */
-	white-space: nowrap; /* Assure que les logos restent sur une seule ligne */
-	position: relative;
-	padding: 60px 0;
-}
-
-.logos-slide-2 img {
-	width: 50px; /* Taille des logos */
-	height: auto; /* Garde les proportions d'origine */
-	display: inline-block;
-	margin: 0 42px; /* Espace entre les logos */
-}
-
-.logos-slide-2 .mongo {
-	width: 80px;
-	height: auto;
-	vertical-align: top;
-}
-
-/* Responsive Design: ajustements pour tablettes */
-@media (max-width: 768px) {
-	.logos-slide-2 img {
-		width: 40px; /* Taille réduite des logos */
-		margin: 0 15px; /* Espace réduit entre les logos */
-	}
-
-	.logos-slide-2 .mongo {
-		width: 60px; /* Taille réduite pour MongoDB */
-	}
-}
-
-/* Responsive Design: ajustements pour mobiles */
-@media (max-width: 480px) {
-	.logos-slide-2 img {
-		width: 30px; /* Taille plus petite des logos pour les écrans très petits */
-		margin: 0 10px; /* Espace minimal entre les logos */
-	}
-
-	.logos-slide-2 .mongo {
-		width: 45px; /* Encore plus petit pour MongoDB */
-	}
-}
-
-.illustration {
-	width: 100%;
-	position: relative;
-	overflow: hidden; /* Cache la barre de défilement horizontale */
-	padding: 20px 0;
-	-ms-overflow-style: none; /* IE and Edge */
-	scrollbar-width: none; /* Firefox */
-	white-space: nowrap;
-	margin-top: 60px;
-}
-
-.illustration::-webkit-scrollbar {
-	display: none; /* Cache la barre de défilement pour Webkit (Chrome, Safari) */
-}
-
-/* Styles communs pour illustration et portfolio */
-.illustration-slide,
-.portfolio-slide {
+.skill-grid {
 	display: flex;
-	gap: 20px;
-	overflow-x: auto;
-	overflow-y: hidden;
-	scrollbar-width: none;
-	-ms-overflow-style: none;
-	white-space: nowrap;
-	align-items: center; /* Assure que les éléments sont centrés verticalement */
+	flex-wrap: wrap;
+	gap: 10px;
+	margin: 0 60px;
 }
 
-/* Spécifique pour Drawing */
-.drawing-slide img {
-	width: auto; /* Adapte la largeur automatiquement */
-	max-width: 200px; /* Limite la largeur maximale pour les illustrations */
-	height: auto; /* Hauteur ajustée automatiquement pour conserver les proportions */
-	pointer-events: none; /* Empêche les interactions pendant le glissement */
-	user-select: none; /* Empêche la sélection de texte/image */
-	border-radius: 10px; /* Arrondit les bords de l'image */
-}
-
-/* Spécifique pour Portfolio */
-.portfolio-slide img {
-	width: auto;
-	max-width: 300px; /* Largeur maximale plus grande pour les images du portfolio */
-	height: auto;
-	pointer-events: auto; /* Permet les interactions pour les clics */
-	user-select: none; /* Empêche la sélection de texte/image */
-	border-radius: 10px;
-}
-
-/* Boutons de défilement pour chaque section */
-.scroll-btn {
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
-	width: 60px;
-	height: 60px;
-	background-color: #fff;
-	border: none;
-	cursor: pointer;
+.skill-chip {
 	display: flex;
 	align-items: center;
-	justify-content: center;
-	color: #333;
-	font-size: 16px;
-	opacity: 0.7;
-	z-index: 10;
-	border-radius: 100%;
+	gap: 8px;
+	background: rgba(255, 255, 255, 0.05);
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	border-radius: 8px;
+	padding: 8px 14px;
+	transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+	cursor: default;
 }
 
-.scroll-btn.left {
-	left: 10px;
+.skill-chip:hover {
+	background: rgba(255, 255, 255, 0.09);
+	border-color: rgba(255, 255, 255, 0.16);
+	transform: translateY(-2px);
 }
 
-.scroll-btn.right {
-	right: 10px;
+.skill-chip img {
+	width: 22px;
+	height: 22px;
+	object-fit: contain;
+	display: block;
+	flex-shrink: 0;
 }
 
-/* Requêtes média pour les petits écrans */
+.skill-chip span {
+	font-size: 12px;
+	font-weight: 400;
+	color: #bbb;
+	white-space: nowrap;
+}
+
 @media (max-width: 768px) {
-	.portfolio-item {
-		width: 100%; /* Les éléments du portfolio prennent toute la largeur */
-		margin-top: 20px; /* Réduit l'espace au-dessus des items */
+	.skill-grid {
+		margin: 0 20px;
+		gap: 8px;
 	}
-
-	.portfolio-item img {
-		max-width: 100%; /* Les images s'adaptent à la largeur du conteneur */
-	}
-
-	.scroll-btn {
-		width: 40px; /* Réduit la taille des boutons de défilement */
-		height: 40px; /* Réduit la taille des boutons de défilement */
-		font-size: 12px; /* Taille de police réduite pour les boutons */
-	}
-
-	/* Ajuste la position des boutons pour qu'ils ne recouvrent pas les images */
-	.scroll-btn.left {
-		left: 5px;
-	}
-
-	.scroll-btn.right {
-		right: 5px;
+	.skills-section-label {
+		margin: 20px 20px 12px;
 	}
 }
 
-/* Styles pour le zoom au survol des images */
-.portfolio-item img:hover,
-.drawing-slide img:hover {
-	transform: scale(1.05); /* Agrandit légèrement l'image au survol */
-	cursor: pointer;
+@media (max-width: 480px) {
+	.skill-grid {
+		margin: 0 12px;
+	}
+	.skills-section-label {
+		margin: 16px 12px 10px;
+	}
+	.skill-chip {
+		padding: 7px 11px;
+	}
+	.skill-chip span {
+		font-size: 11px;
+	}
 }
 
-/* Empêcher la sélection et le glissement des images lors du défilement */
-.illustration-slide img,
-.portfolio-slide img {
-	-webkit-user-drag: none; /* Empêche le glissement des images */
-	user-select: none; /* Empêche la sélection des images */
-}

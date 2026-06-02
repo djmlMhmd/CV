@@ -1,67 +1,309 @@
 .modal {
+	display: none;
 	position: fixed;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0, 0, 0, 0.8);
-	display: flex;
+	inset: 0;
+	background-color: rgba(0, 0, 0, 0.75);
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
 	justify-content: center;
 	align-items: center;
 	z-index: 1050;
-	backdrop-filter: blur(10px);
+	padding: 20px;
+	opacity: 0;
+	transition: opacity 0.2s ease;
+}
+
+.modal.open {
+	display: flex;
+	opacity: 1;
 }
 
 .modal-content {
 	position: relative;
-	background-color: #101010;
-	margin: auto;
-	padding: 20px;
-	border-radius: 10px;
-	max-width: 80%;
-	max-height: 80%;
-	overflow: auto;
-	text-align: center;
-	-ms-overflow-style: none; /* IE and Edge */
-	scrollbar-width: none; /* Firefox */
-	border: 1px solid rgba(255, 255, 255, 0.18); /* Optionnel: Ajoute une bordure subtile */
+	background: #161616;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 16px;
+	width: 100%;
+	max-width: 680px;
+	max-height: 85vh;
+	overflow-y: auto;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+	animation: modalIn 0.25s ease forwards;
 }
 
 .modal-content::-webkit-scrollbar {
-	display: none; /* Chrome, Safari, Opera */
+	display: none;
 }
 
-.modal-content h2 {
-	color: #818181;
-	font-family: Helvetica, sans-serif;
+@keyframes modalIn {
+	from { transform: translateY(12px); opacity: 0; }
+	to   { transform: translateY(0);    opacity: 1; }
 }
 
-.modal-content p a {
-	color: #00f;
-	text-decoration: none;
+.modal-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 20px 24px 16px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+	position: sticky;
+	top: 0;
+	background: #161616;
+	z-index: 1;
+	border-radius: 16px 16px 0 0;
 }
 
-.modal-content p a:hover {
-	text-decoration: underline;
+.modal-header h2 {
+	font-size: 18px;
+	font-weight: 600;
+	color: #fff;
+	margin: 0;
 }
 
-.modal-content img {
-	width: 100%; /* Ajuste la largeur des images à 100% de leur conteneur */
-	height: auto; /* Maintient les proportions originales de l'image */
-	margin-bottom: 40px; /* Ajoute un espace entre les images */
-}
-
-.close {
-	position: absolute;
-	top: 10px;
-	right: 20px;
-	font-size: 30px;
+.modal-close {
+	background: none;
+	border: none;
 	cursor: pointer;
-	color: rgb(253, 252, 252);
+	color: #666;
+	padding: 4px;
+	display: flex;
+	align-items: center;
+	transition: color 0.15s ease;
+}
+
+.modal-close:hover {
+	color: #fff;
+}
+
+.modal-close svg {
+	width: 20px;
+	height: 20px;
+}
+
+.modal-images {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	padding: 20px 24px;
 }
 
 .modal-images img {
 	width: 100%;
-	margin-top: 10px;
+	height: auto;
+	border-radius: 10px;
 	display: block;
+}
+
+.modal-gh-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	margin: 0 24px 24px;
+	font-size: 13px;
+	color: #888;
+	text-decoration: none;
+	transition: color 0.2s ease;
+}
+
+.modal-gh-link:hover {
+	color: #fff;
+	text-decoration: none;
+}
+
+.modal-gh-link svg {
+	width: 14px;
+	height: 14px;
+	fill: currentColor;
+	flex-shrink: 0;
+}
+
+/* ── Drawing lightbox ── */
+.drawing-lightbox {
+	display: none;
+	position: fixed;
+	inset: 0;
+	background: #000;
+	justify-content: center;
+	align-items: center;
+	z-index: 1100;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+
+.drawing-lightbox.open {
+	opacity: 1;
+}
+
+.drawing-lightbox-close {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	background: rgba(255, 255, 255, 0.1);
+	border: 1px solid rgba(255, 255, 255, 0.18);
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	color: #fff;
+	transition: background 0.15s;
+	z-index: 1102;
+}
+
+.drawing-lightbox-close:hover {
+	background: rgba(255, 255, 255, 0.2);
+}
+
+.drawing-lightbox-close svg {
+	width: 16px;
+	height: 16px;
+}
+
+/* Layout : sidebar gauche + zone principale */
+.drawing-lightbox-layout {
+	display: flex;
+	align-items: stretch;
+	gap: 16px;
+	width: min(1020px, 94vw);
+	max-height: 90vh;
+	animation: lbIn 0.3s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes lbIn {
+	from { transform: translateY(14px) scale(0.97); opacity: 0; }
+	to   { transform: translateY(0)     scale(1);    opacity: 1; }
+}
+
+/* Sidebar miniatures */
+.drawing-sidebar {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	width: 88px;
+	flex-shrink: 0;
+	overflow-y: auto;
+	scrollbar-width: none;
+	padding-right: 2px;
+}
+
+.drawing-sidebar::-webkit-scrollbar {
+	display: none;
+}
+
+.drawing-thumb {
+	width: 100%;
+	aspect-ratio: 1;
+	border-radius: 7px;
+	overflow: hidden;
+	cursor: pointer;
+	border: 2px solid transparent;
+	transition: border-color 0.18s, opacity 0.18s;
+	flex-shrink: 0;
+	opacity: 0.45;
+}
+
+.drawing-thumb img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	pointer-events: none;
+}
+
+.drawing-thumb:hover {
+	opacity: 0.75;
+}
+
+.drawing-thumb.active {
+	border-color: #fff;
+	opacity: 1;
+}
+
+/* Zone principale : image + palette */
+.drawing-lightbox-inner {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	min-width: 0;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+#drawingLightboxImg {
+	width: 100%;
+	flex: 1;
+	min-height: 0;
+	max-height: calc(90vh - 100px);
+	display: block;
+	object-fit: contain;
+	background: #111;
+	border: none;
+	outline: none;
+	transition: opacity 0.18s ease;
+}
+
+#drawingLightboxImg.switching {
+	opacity: 0;
+}
+
+/* Palette flush sous l'image */
+.drawing-palette {
+	display: flex;
+	width: 100%;
+	height: 88px;
+	flex-shrink: 0;
+}
+
+.palette-swatch {
+	flex: 1;
+	height: 100%;
+	cursor: default;
+	position: relative;
+	transition: flex 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.palette-swatch:hover {
+	flex: 2.2;
+}
+
+.palette-swatch::after {
+	content: attr(data-hex);
+	position: absolute;
+	bottom: 9px;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 9px;
+	font-family: 'Inter', monospace;
+	font-weight: 500;
+	color: rgba(255, 255, 255, 0.65);
+	letter-spacing: 0.06em;
+	white-space: nowrap;
+	opacity: 0;
+	transition: opacity 0.15s;
+	text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+.palette-swatch:hover::after {
+	opacity: 1;
+}
+
+@media (max-width: 700px) {
+	.drawing-sidebar {
+		display: none;
+	}
+
+	.drawing-lightbox-layout {
+		width: 100vw;
+	}
+
+	.drawing-lightbox-inner {
+		border-radius: 0;
+	}
+
+	.drawing-palette {
+		height: 64px;
+	}
 }
